@@ -1,0 +1,69 @@
+<div class="mainPage d-flex justify-content-between flex-wrap flex-md nowrap align-items-center -pt-2 pb-2 mb-3 border-bottom">
+    <h1 class="h-2">Customer</h1>
+
+    <div class="btn-toolbar mb-2 mb-md 0">
+       <div class="btn-group mb-2 p-3">
+          <button type="button" class="btn btn-sm btn-outline-secondary">?</button>
+       </div> 
+    </div>
+</div>
+
+
+<div class="col py-3">
+    <div class="row">
+        <div class="col">
+           
+            
+           <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                 <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                 <li class="breadcrumb-item active">New Customer</li>
+              </ol>
+           </nav> 
+        </div>
+
+        <div class="col text-end fw-lighter">
+           <b>UserId</b> 
+        </div>
+    </div>
+</div>
+
+
+<div class="">
+   <form action="/add" method="POST">
+     <div class="row form-group mb-4">
+        <div class="col">
+           <label for="firstName"><i class="bi bi-person text-primary"></i> First Name:</label> 
+           <input type="text" class=" form-control mt-2" id="firstName" name="firstName" value="" placeholder="First Name:" required>
+        </div>
+        <div class="col">
+           <label for="lastName"><i class="bi bi-person text-primary"></i> Last Name:</label> 
+           <input type="text" class=" form-control mt-2" id="firstName" name="lastName" value="" placeholder="Last Name:" required>
+        </div>
+     </div>
+
+     <div class="row form-group mb-4">
+        <div class="col">
+           <label for="tel"><i class="bi bi-telephone text-primary"></i> Telephone:</label> 
+           <input type="tel" class=" form-control mt-2" id="tel" name="tel" value="" placeholder="Telephone:" required>
+        </div>
+        <div class="col">
+           <label for="email"><i class="bi bi-envelope text-primary"></i> Email:</label> 
+           <input type="email" class=" form-control mt-2" id="email" name="email" value="" placeholder="Enter Email:" required>
+        </div>
+     </div>
+
+        <div class="row form-group mb-4">
+            
+            <label for="details"><i class="bi bi-info text-primary"></i> Customer Details:</label> 
+            <textarea name="message" class="w-75" id="message" cols="30" rows="10"></textarea>
+            
+        </div>
+
+        <div class="mt-4 d-flex align-items-center justify-content-center form-group mb-4">
+           <button type="submit" class=" btn btn-secondary py-2 w-50"><i class="bi bi-send"></i> Send</button> 
+        </div>
+
+  </form>
+</div>
+

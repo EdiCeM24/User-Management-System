@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="message" content="<%= locals.message %>">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="shortcut icon" href="/images/favicon4.ico" type="image/x-icon"> 
+      <title>EdiMars <%= locals.title %></title>
+      <link rel="stylesheet" href="../css/index.css">
+      <script src="/assets/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="/css/css/bootstrap.min.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"crossorigin="anonymous"> 
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    </head>  
+    <body>
+    </header>
+      <%- include('partials/header') %>
+    <header>
+      <div class="container-fluid p-2">
+        <aside class="row">
+         <%- include('partials/sidebar') %> 
+        </aside>
+      </div>
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <%- body %>
+      </main>
+      <footer>
+          <%- include('partials/footer.ejs') %>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+    </body>
+ </html>

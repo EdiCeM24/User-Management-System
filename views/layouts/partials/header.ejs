@@ -1,0 +1,25 @@
+<header class="navbar navbar-dark sticky-top z-3 bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="/api/home">
+      <img src="/images/favicon4.ico" alt=""> 
+       <strong>EdiMars</strong> 
+    </a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapsed"
+     data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <form class="nav col-12 w-50 col-md-auto flex-fill mb-2 justify-content-center mb-md-0" role="search" method="post"
+       action="/search">
+       <input type="search" name="searchTerm" id="" class="form-control form-control-dark w-25 rounded-1 border-0"
+        placeholder="Search..." aria-label="Search"><i class="bi bi-search position-absolute m-2 top-25 ms-lg-5 end-25"></i>
+    </form>
+
+    <div class="d-flex align-items-center p-2 gap-4 justify-content-between">
+        <a href="/api/login"><i class="bi bi-key text-infor" title="Login"></i></a>
+        <a href="/api/register"><i class="bi bi-lock text-infor" title="Register"></i></a>
+    </div>
+    <div class="d-flex align-items-center p-2 gap-4 justify-content-between">
+        <i class="bi bi-sun text-light"></i>
+        <i class="bi bi-moon text-light"></i>
+    </div>
+</header>
