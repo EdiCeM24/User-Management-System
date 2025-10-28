@@ -1,10 +1,10 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const connectFlash = require('express-flash-messages')
-const expressLayout = require('express-ejs-layouts')
-const session = require('express-session')
-
+const session = require('express-session');
+//const flash = require('express-flash-message');
+const expressLayout = require('express-ejs-layouts');
+const flash = require('connect-flash');
 
 
 
@@ -16,13 +16,19 @@ app.use(cors());
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(connectFlash());
 app.use(expressLayout);
+
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days = 1week
+  }
 }))
+
+// Flash Messages
+app.use(flash());
 
 app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
@@ -42,7 +48,8 @@ app.use('/', require('../servers/routes/customer'))
 
 connectDB();
 
-app.get('/',  cors(), (req, res) => {
+app.get('/',  cors(), async(req, res) => {
+  await req.flash('info', 'page not found!');
   res.status(404).render('404');
 });
 
