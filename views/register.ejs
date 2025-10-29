@@ -1,6 +1,65 @@
-<h2>Register Page</h2>
+<div class="mainPage d-flex justify-content-between flex-wrap flex-md nowrap align-items-center -pt-2 pb-2 mb-3 border-bottom">
+    <h1 class="h-2">Register Page</h1>
+
+    <div class="btn-toolbar mb-2 mb-md 0">
+       <div class="btn-group mb-2 p-3">
+          <form action="/logout" method="post">
+             <button type="button" class="btn btn-sm btn-outline-danger"><i class="bi bi-box-arrow-right text-primary" title="Logout"></i></button>
+          </form>
+       </div> 
+    </div>
+</div>
+
+
+<div class="container-fluid bg-secondary rounded-2 p-5">
+    <form action="/registerPost" method="POST">
+        <div class="d-flex align-items-center justify-content-evenly mb-3">
+            <div class="form-group">
+              <label for="first name" class="text-light" style="font-weight: 600;">First Name:</label>
+              <input type="text" class="form-control mt-3" id="firstname" name="firstName" placeholder="Enter your First name">
+            </div>
+
+            <div class="form-group">
+              <label for="lastname" class="text-light" style="font-weight: 600;">Last Name:</label>
+              <input type="text" class="form-control mt-3" id="lastname" name="lastName" placeholder="Enter your Last name">
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center form-group justify-content-evenly mb-3">
+            <div class="form-group">
+                <label for="username" class="text-light" style="font-weight: 600;">Username:</label>
+                <input type="text" class="form-control mt-3" id="username" name="username" placeholder="Enter your username">
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="text-light" style="font-weight: 600;">Email:</label>
+              <input type="email" class="form-control mt-3" id="email" name="email" placeholder="Enter your email">
+            </div>
+        </div>
+
+        <div class="position-relative d-flex align-items-center form-group justify-content-evenly mt-3 mb-3">
+           <div class="form-group align-content-center" style="margin-left: 2%;">
+              <label for="password" class="text-light" style="font-weight: 600;">Password:</label>
+              <input type="password" class="form-control p-2 mt-3" id="password" name="password" placeholder="Enter your Password">
+              <div class="position-absolute top-50 start-50 translate-middle" style="margin-top: 1rem; margin-left: 8%;">
+                 <i class="bi bi-eye"></i>
+                 <i class="bi bi-eye-slash"></i>
+              </div>
+           </div>  
+
+        </div>
+
+        <div class="form-group d-flex align-items-center justify-content-center" style="margin-left: -2%;">
+           
+           <p class="text-wrap" style="font-weight: 600;">By clicking the register button, you agree to our <a href="#" class="text-light">Terms of Service</a> and <a href="#" class="text-light">Privacy Policy</a>.</p> 
+        </div>
+
+        
+
+        <button type="submit" class="btn btn-primary mt-4 w-50" style="margin-left: 18%; font-weight: 600;">Register</button>
+    </form>
+</div>
 
 
 
-<i class="bi bi-eye"></i>
-<i class="bi bi-eye-slash"></i>
+

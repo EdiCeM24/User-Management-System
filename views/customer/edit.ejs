@@ -1,0 +1,124 @@
+<div class="mainPage d-flex justify-content-between flex-wrap flex-md nowrap align-items-center -pt-2 pb-2 mb-3 border-bottom">
+    <h1 class="h3 mb-0 text-gray-800">Editing</h1>
+    <strong class="h-2"><%= customer.firstName %> <%= customer.lastName %></strong>
+
+    <div class="btn-toolbar mb-2 mb-md 0">
+       <div class="btn-group me-2">
+           <a href="/edit/<%= customer._id %>" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil" title="Edit"></i></a>
+           <a href="/customers/Share/<%= customer._id %>" class="btn btn-sm btn-outline-secondary">Share</a>
+       </div> 
+    </div>
+</div>
+
+
+<div class="col py-3">
+    <div class="row">
+        <div class="col">
+           
+            
+           <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                 <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                 <li class="breadcrumb-item active"><%= customer.firstName %> <%= customer.lastName %></li>
+              </ol>
+           </nav> 
+        </div>
+
+        <div class="col text-end fw-lighter">
+           <b>Last Updated: <%= new Date(customer.updatedAt).toUTCString() %></b> 
+           <br>
+           <b>UserId: </b><%= customer._id %> 
+        </div>
+    </div>
+</div>
+
+
+<div class="">
+   <form action="/edit/<%= customer._id %>?_method=PUT" method="POST">
+     <div class="row form-group mb-4">
+        <div class="col">
+           <label for="firstName"><i class="bi bi-person text-primary"></i> First Name:</label> 
+           <input type="text" class=" form-control mt-2" id="firstName" name="firstName" value="<%= customer.firstName %>" placeholder="First Name:" required>
+        </div>
+        <div class="col">
+           <label for="lastName"><i class="bi bi-person text-primary"></i> Last Name:</label> 
+           <input type="text" class=" form-control mt-2" id="lastName" name="lastName" value="<%= customer.lastName %> " placeholder="Last Name:" required>
+        </div>
+     </div>
+
+     <div class="row form-group mb-4">
+        <div class="col">
+           <label for="tel"><i class="bi bi-telephone text-primary"></i> Telephone:</label> 
+           <input type="tel" class=" form-control mt-2" id="tel" name="tel" value="<%= customer.tel %>" placeholder="Telephone e.g. your mobile number: 0712345678" required>
+        </div>
+
+        <div class="col">
+           <label for="email"><i class="bi bi-envelope text-primary"></i> Email:</label> 
+           <input type="email" class=" form-control mt-2" id="email" name="email" value="<%= customer.email %>" placeholder="Enter Email e.g.: user24@gmail.com" required>
+        </div>
+
+     <div class="row form-group mb-4">
+        <div class="col">
+           <label for="city"><i class="bi bi-geo-alt text-primary"></i> City:</label> 
+           <input type="text" class=" form-control mt-2" id="city" name="city" value="<%= customer.city %>" placeholder="Fill in your City:" required>
+        </div>
+        <div class="col">
+           <label for="state"><i class="bi bi-geo-alt text-primary"></i> State:</label> 
+           <input type="text" class=" form-control mt-2" id="state" name="state" value="<%= customer.state %>" placeholder="Fill in your State:" required>
+        </div>
+     </div>
+
+     <div class="row form-group mb-4">
+        <div class="col">
+           <label for="zipCode"><i class="bi bi-geo-alt text-primary"></i> ZipCode:</label> 
+           <input type="number" class=" form-control mt-2" id="zipCode" name="zipCode" value="<%= customer.zipCode %>" placeholder="Fill in your ZipCode e.g 12345:" required>
+        </div>
+        <div class="col">
+           <label for="country"><i class="bi bi-geo-alt text-primary"></i> Country:</label> 
+           <input type="text" class=" form-control mt-2" id="country" name="country" value="<%= customer.country %>" placeholder="Fill in your Country:" required>
+        </div>
+
+        <div class="row form-group mb-4">
+            
+            <label for="details"><i class="bi bi-info text-primary"></i> Customer Details:</label> 
+            <textarea name="message" class="w-75" id="message" cols="30" rows="10"><%= customer.message %></textarea>
+            
+        </div>
+
+        <div class="mt-4 d-flex align-items-center justify-content-center form-group gap-3 mb-4">
+           <button type="submit" class=" btn btn-secondary py-2 w-25"><i class="bi bi-send"></i> Update</button> 
+
+
+           <button type="button" class=" btn btn-danger py-2 w-25" data-bs-toggle="modal" id="deleteButton" data-bs-target="#deleteModal"><i class="bi bi-heartbreak"></i> Delete</button> 
+        </div>
+
+  </form>
+</div>
+
+
+
+<!-- Modal Button -->
+ <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true" role="dialog" id="deleteButton">
+    <div class="modal-dialog" role="document">
+       <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title">You are about to delete this customer's account</div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"><i class="bi bi-x-lg"></i></button>
+          </div>
+
+          <div class="modal-body">
+             <p>Are you sure you want to delete this customer's account? <b><%= customer.firstName %> <%= customer.lastName %></b></p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <form action="/edit/<%= customer._id %>?_method=DELETE" method="POST" class="position-relative">
+               <input type="hidden" name="_method" value="DELETE">
+               <button type="submit" class="btn btn-primary"><i class="bi bi-heartbreak"></i> Yes, Delete Customer</button>
+            </form>
+          </div>
+
+       </div> 
+    </div>
+ </div>
+

@@ -1,5 +1,16 @@
-<h2>Login Page</h2>
+<div class="mainPage d-flex justify-content-between flex-wrap flex-md nowrap align-items-center -pt-2 pb-2 mb-3 border-bottom">
+    <h1 class="h-2">Login Page</h1>
 
+    <div class="btn-toolbar mb-2 mb-md 0">
+       <div class="btn-group mb-2 p-3">
+          <form action="/register" method="post">
+             <button type="button" class="btn btn-sm btn-outline-secondary"><i class="bi bi-lock text-primary" title="register"></i></button>
+          </form>
+       </div> 
+    </div>
+</div>
+<form class="form-signin" method="post" action="/login"></form>
 
 <i class="bi bi-eye"></i>
 <i class="bi bi-eye-slash"></i>
+<a href="/logout"></a>

@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const methodOverride = require('method-override');
 const session = require('express-session');
 //const flash = require('express-flash-message');
 const expressLayout = require('express-ejs-layouts');
@@ -16,6 +17,7 @@ app.use(cors());
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(methodOverride('_method'));
 app.use(expressLayout);
 
 app.use(session({
